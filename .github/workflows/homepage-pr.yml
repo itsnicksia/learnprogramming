@@ -1,0 +1,32 @@
+name: "Build Homepage on PR"
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/**
+      - ./projects/homepage/client/**
+
+jobs:
+  sync:
+    name: "Build and Sync Homepage"
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./projects/homepage/client
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: npm ci
+        run: npm ci
+
+      - name: npm build
+        run: npm run build
