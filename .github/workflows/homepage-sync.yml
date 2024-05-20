@@ -37,7 +37,7 @@ jobs:
         run: npm run build
 
       - name: s3 sync
-        run: aws s3 sync . s3://628602948023-learnprogramming --delete
+        run: aws s3 sync dist/ s3://628602948023-learnprogramming --delete
 
       - name: invalidate distribution
         run: aws cloudfront create-invalidation --distribution-id EVF5M3I81ONIU --paths "/*"
