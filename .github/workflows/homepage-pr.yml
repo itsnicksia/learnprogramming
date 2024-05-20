@@ -5,7 +5,7 @@ on:
       - main
     paths:
       - .github/**
-      - ./projects/homepage/client/**
+      - projects/homepage/client/**
 
 jobs:
   sync:
