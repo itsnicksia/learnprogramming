@@ -9,7 +9,7 @@ on:
 
 jobs:
   sync:
-    name: "Build and Sync Homepage"
+    name: "Build Homepage on PR"
     runs-on: ubuntu-latest
     defaults:
       run:
