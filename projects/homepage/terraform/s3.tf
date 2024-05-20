@@ -12,6 +12,13 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "home_sse" {
   }
 }
 
+resource "aws_s3_bucket_versioning" "home_versioning" {
+  bucket = aws_s3_bucket.home_bucket.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
 resource "aws_s3_bucket_ownership_controls" "home_ownership" {
   bucket = aws_s3_bucket.home_bucket.id
   rule {

@@ -1,0 +1,9 @@
+# Nick owns files in the root directory
+/* @itsnicksia
+
+# Nick owns all Terraform files because he's the one paying for it :)
+**/terraform/** @itsnicksia
+**/*.tf @itsnicksia
+**/*.tfvars @itsnicksia
+**/*.tfstate @itsnicksia
+**/terragrunt.hcl @itsnicksia
